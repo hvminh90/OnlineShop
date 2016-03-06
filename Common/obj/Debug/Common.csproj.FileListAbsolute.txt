@@ -1,0 +1,8 @@
+D:\MVC .NET\OnlineShop\Common\bin\Debug\Common.dll
+D:\MVC .NET\OnlineShop\Common\bin\Debug\Common.pdb
+D:\MVC .NET\OnlineShop\Common\obj\Debug\Common.dll
+D:\MVC .NET\OnlineShop\Common\obj\Debug\Common.pdb
+D:\MVC.NET\OnlineShop\Common\bin\Debug\Common.dll
+D:\MVC.NET\OnlineShop\Common\bin\Debug\Common.pdb
+D:\MVC.NET\OnlineShop\Common\obj\Debug\Common.dll
+D:\MVC.NET\OnlineShop\Common\obj\Debug\Common.pdb

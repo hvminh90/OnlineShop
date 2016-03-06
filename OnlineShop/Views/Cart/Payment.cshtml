@@ -1,0 +1,99 @@
+﻿@model List<OnlineShop.Models.CartItem>
+@{
+    ViewBag.Title = "Payment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var totalPrice = (int)ViewBag.TotalPrice;
+}
+
+<div class="content">
+
+    <div class="section group">
+        @if (Model.Count > 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Mã SP</td>
+                        <td>Tên SP</td>
+                        <td>Ảnh SP</td>
+                        <td>Số lượng</td>
+                        <td>Đơn giá</td>
+                        <td>Thành tiền</td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Product.Code</td>
+                            <td>@item.Product.Name</td>
+                            <td><img src="@item.Product.Image" width="100" /></td>
+                            <td>@item.Quantity</td>
+                            <td>@item.Product.Price.GetValueOrDefault(0).ToString("N0")</td>
+                            <td>@((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0"))</td>
+
+                        </tr>
+                    }
+                    @if (Model.Count() > 0)
+                    {
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Tổng tiền:</td>
+                            <td>@totalPrice.ToString("N0")</td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        }
+        else
+        {
+            <label class="alert alert-success">Không có sản phẩm nào trong giỏ hàng</label>
+        }
+
+    </div>
+    <div class="section group">
+        @using (@Html.BeginForm("Payment", "Cart", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Họ tên người nhận:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="ShipName" name="ShipName" placeholder="Nhập họ tên" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Số điện thoại:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="ShipMobile" placeholder="Nhập số điện thoại" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Địa chỉ:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="ShipAddress" placeholder="Nhập địa chỉ" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Mail:</label>
+                <div class="col-sm-6">
+                    <input type="email" class="form-control" name="ShipEmail" placeholder="Nhập email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-6">
+                    <button type="submit" class="btn btn-success">Xác nhận</button>
+                    <a class="btn btn-success" href="/">Tiếp tục mua hàng</a>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
