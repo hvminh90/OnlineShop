@@ -196,7 +196,7 @@ namespace OnlineShop.Controllers
                 }
                     
             }
-            return Redirect("/");
+            return RedirectToAction("Index","Home");
         }
     }
 }

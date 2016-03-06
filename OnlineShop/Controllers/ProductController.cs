@@ -54,6 +54,7 @@ namespace OnlineShop.Controllers
             return View(model);
         }
          [Route("chi-tiet/{metatitle}-{productId}")]
+         [OutputCache(CacheProfile="Cache1DayForProduct")]
         public ActionResult Detail (int productId)
         {
             var productDao = new ProductDAO();
