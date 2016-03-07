@@ -46,3 +46,5 @@ D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\en\StaticResource.resources.dll
 D:\MVC .NET\SOURCE\OnlineShop\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\MVC .NET\SOURCE\OnlineShop\Model\obj\Debug\Model.dll
 D:\MVC .NET\SOURCE\OnlineShop\Model\obj\Debug\Model.pdb
+D:\MVC.NET\OnlineShop\Model\bin\Debug\Common.dll
+D:\MVC.NET\OnlineShop\Model\bin\Debug\Common.pdb

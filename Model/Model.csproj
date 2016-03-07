@@ -56,7 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\CategoryDAO.cs" />
     <Compile Include="DAO\ContactDAO.cs" />
+    <Compile Include="DAO\ContentDAO.cs" />
     <Compile Include="DAO\FeedbackDAO.cs" />
     <Compile Include="DAO\FooterDAO.cs" />
     <Compile Include="DAO\MenuDAO.cs" />
@@ -97,6 +99,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{6836b2dc-0f94-4ce2-b439-870a58e5accf}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StaticResource\StaticResource.csproj">
       <Project>{a3858e10-fc19-4431-a024-2179f3a76df3}</Project>
       <Name>StaticResource</Name>

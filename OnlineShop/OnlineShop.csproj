@@ -206,6 +206,7 @@
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Common\CommonContants.cs" />
+    <Compile Include="Common\CommonList.cs" />
     <Compile Include="Common\CustomMembershipProvider.cs" />
     <Compile Include="Common\CustomRoleProvider.cs" />
     <Compile Include="Common\Encryptor.cs" />
@@ -2190,6 +2191,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Areas\Admin\Views\Content\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Content\Edit.cshtml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
