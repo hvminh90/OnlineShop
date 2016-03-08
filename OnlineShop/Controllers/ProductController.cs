@@ -65,5 +65,41 @@ namespace OnlineShop.Controllers
             ViewBag.RelatedProducts = productDao.ListRelatedProduct(productId);
             return View(product);
         }
+
+        public JsonResult ListName(string q)
+         {
+             var dao = new ProductDAO();
+             var lstName = dao.ListName(q);
+             return new JsonResult { Data = lstName, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+         }
+
+        public ActionResult Search(string keyword, int page = 1)
+        {
+            var productDao = new ProductDAO();
+           
+            var total = 0;
+            var pageSize = 8;
+
+            var model = productDao.Search(keyword, ref total, page, pageSize);
+
+            int maxPage = 5;
+            int totalPage = 0;
+
+            totalPage = (int)Math.Ceiling((double)total / pageSize);
+            ViewBag.TotalPage = totalPage;
+            ViewBag.Page = page;
+            ViewBag.MaxPage = maxPage;
+
+            ViewBag.First = 1;
+            ViewBag.Last = totalPage;
+            ViewBag.Next = page + 1;
+            ViewBag.Prev = page - 1;
+
+            ViewBag.KeyWord = keyword;
+
+
+
+            return View(model);
+        }
     }
 }

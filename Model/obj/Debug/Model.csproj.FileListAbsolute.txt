@@ -29,3 +29,20 @@ D:\MVC.NET\OnlineShop\Model\bin\Debug\en\StaticResource.resources.dll
 D:\MVC.NET\OnlineShop\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\MVC.NET\OnlineShop\Model\obj\Debug\Model.dll
 D:\MVC.NET\OnlineShop\Model\obj\Debug\Model.pdb
+D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\Model.dll.config
+D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\Model.dll
+D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\Model.pdb
+D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\EntityFramework.dll
+D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\PagedList.dll
+D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\PagedList.Mvc.dll
+D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\StaticResource.dll
+D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\StaticResource.pdb
+D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\EntityFramework.xml
+D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\PagedList.xml
+D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\PagedList.Mvc.xml
+D:\MVC .NET\SOURCE\OnlineShop\Model\bin\Debug\en\StaticResource.resources.dll
+D:\MVC .NET\SOURCE\OnlineShop\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\MVC .NET\SOURCE\OnlineShop\Model\obj\Debug\Model.dll
+D:\MVC .NET\SOURCE\OnlineShop\Model\obj\Debug\Model.pdb

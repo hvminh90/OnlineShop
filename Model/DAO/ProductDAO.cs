@@ -40,6 +40,16 @@ namespace Model.DAO
             var mode = db.Products.Where(p => p.CategoryID == categoryID && p.Status == true).OrderByDescending(p=>p.CreatedDate).Skip((page-1)*pageSize).Take(pageSize).ToList();
             return mode;
         }
+        public List<string> ListName(string q)
+        {
+            return db.Products.Where(p => p.Name.Contains(q)).Select(p => p.Name).ToList();
+        }
 
+        public List<Product> Search(string keyword, ref int total, int page, int pageSize)
+        {
+            total = db.Products.Where(p => p.Name.Contains(keyword) && p.Status == true).Count();
+            var mode = db.Products.Where(p => p.Name.Contains(keyword) && p.Status == true).OrderByDescending(p => p.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize).ToList();
+            return mode;
+        }
     }
 }
