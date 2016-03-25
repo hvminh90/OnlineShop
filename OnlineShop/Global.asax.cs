@@ -17,5 +17,10 @@ namespace OnlineShop
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+        //protected void Application_AuthenticateRequest(Object sender,
+        //                                           EventArgs e)
+        //{
+        //    if (!Request.IsAuthenticated) Response.Redirect("/");
+        //}
     }
 }

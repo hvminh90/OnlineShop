@@ -1,0 +1,24 @@
+﻿
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Xóa danh mục</h4>
+    </div>
+    @using (Html.BeginForm("Delete", "Category", FormMethod.Post, new { id = ViewBag.CategoryID }))
+    {
+        <div class="modal-body">
+
+
+            <div class="form-group">
+                <h4>Bạn có muốn xóa danh mục hiện tại?</h4>
+            </div>
+
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+            <button type="submit" class="btn btn-primary">Xóa</button>
+        </div>
+    }
+</div>
+

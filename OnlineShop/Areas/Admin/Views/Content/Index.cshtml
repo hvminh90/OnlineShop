@@ -61,7 +61,7 @@
                                     <td style="width:15%">@item.Name</td>
                                     <td>@item.Description</td>
                                     <td style="width:10%">@item.CreatedDate.Value.ToString("dd/MM/yyyy")</td>
-                                    <td style="width:5%"><a href="#" class="btn-KichHoat" data-id="@item.ID">@(item.Status == false ? "Khóa" : "Kích hoạt")</a></td>
+                                    <td style="width:5%"><a href="#" class="btn-KichHoat-Content" data-id="@item.ID">@(item.Status == false ? "Khóa" : "Kích hoạt")</a></td>
                                     <td style="width:10%">
                                         <a href="/Admin/Content/Edit/@item.ID" class="btn btn-success">Sửa</a> |
                                         <a href="/Admin/Content/Delete/@item.ID" class="btn btn-danger">Xóa</a>
@@ -85,7 +85,31 @@
     </div>
     <!-- /.col-lg-6 -->
     @section Script{
-        
+        <script type="text/javascript">
+
+            $(".btn-KichHoat-Content").off('click').on('click', function (e) {
+                e.preventDefault();
+                var btn = $(this);
+                var id = btn.data('id');
+                
+                $.ajax({
+                    url: '/Content/ChangeStatus',
+                    dataType: 'json',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function(data)
+                    {
+                        if (data.status == true)
+                            btn.text("Kích hoạt");
+                        else
+                            btn.text("Khóa");
+                             
+                    }
+                });
+
+            });
+
+        </script>
     }
 </div>
 

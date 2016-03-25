@@ -1,6 +1,7 @@
 ﻿using Model.DAO;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,6 +10,7 @@ namespace OnlineShop.Controllers
 {
     public class ProductController : Controller
     {
+         int pageSizeProduct = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["PageSizeProduct"]) ? int.Parse(ConfigurationManager.AppSettings["PageSizeProduct"]) : 8;
         // GET: Product
         public ActionResult Index()
         {
@@ -29,15 +31,15 @@ namespace OnlineShop.Controllers
             var productDao = new ProductDAO();
             var productCategoryDao = new ProductCategoryDAO();
             var total = 0;
-            var pageSize = 8;
-            var model = productDao.ListByCategoryID(categoryID,ref total, page, pageSize);
+            //var pageSize = 8;
+            var model = productDao.ListByCategoryID(categoryID, ref total, page, pageSizeProduct);
             var category = productCategoryDao.ViewDetail(categoryID);
 
 
             int maxPage = 5;
             int totalPage = 0;
 
-            totalPage = (int)Math.Ceiling((double)total / pageSize);
+            totalPage = (int)Math.Ceiling((double)total / pageSizeProduct);
             ViewBag.TotalPage = totalPage;
             ViewBag.Page = page;
             ViewBag.MaxPage = maxPage;
@@ -54,7 +56,7 @@ namespace OnlineShop.Controllers
             return View(model);
         }
          [Route("chi-tiet/{metatitle}-{productId}")]
-         [OutputCache(CacheProfile="Cache1DayForProduct")]
+         //[OutputCache(CacheProfile="Cache1DayForProduct")]
         public ActionResult Detail (int productId)
         {
             var productDao = new ProductDAO();
@@ -78,14 +80,14 @@ namespace OnlineShop.Controllers
             var productDao = new ProductDAO();
            
             var total = 0;
-            var pageSize = 8;
+            //var pageSize = 8;
 
-            var model = productDao.Search(keyword, ref total, page, pageSize);
+            var model = productDao.Search(keyword, ref total, page, pageSizeProduct);
 
             int maxPage = 5;
             int totalPage = 0;
 
-            totalPage = (int)Math.Ceiling((double)total / pageSize);
+            totalPage = (int)Math.Ceiling((double)total / pageSizeProduct);
             ViewBag.TotalPage = totalPage;
             ViewBag.Page = page;
             ViewBag.MaxPage = maxPage;
@@ -100,6 +102,18 @@ namespace OnlineShop.Controllers
 
 
             return View(model);
+        }
+
+        public ActionResult AllProduct()
+        {
+            var model = new ProductCategoryDAO().GetListCategoryInProduct();
+            return View(model);
+        }
+
+        public ActionResult ProductChild(int categoryId)
+        {
+            var lstProduct = new ProductDAO().ListProductByCategoryId(4, categoryId);
+            return PartialView(lstProduct);
         }
     }
 }

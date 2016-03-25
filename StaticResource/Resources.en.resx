@@ -120,6 +120,24 @@
   <data name="Address" xml:space="preserve">
     <value>Address</value>
   </data>
+  <data name="ContentCategory" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="ContentDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ContentDetail" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="ContentImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="ContentName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ContentStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
   <data name="English" xml:space="preserve">
     <value>English</value>
   </data>
@@ -131,6 +149,21 @@
   </data>
   <data name="Phone" xml:space="preserve">
     <value>Phone</value>
+  </data>
+  <data name="rqContenDescription" xml:space="preserve">
+    <value>Description is required.</value>
+  </data>
+  <data name="rqContenName" xml:space="preserve">
+    <value>Name is required.</value>
+  </data>
+  <data name="rqContentCategory" xml:space="preserve">
+    <value>Category is required.</value>
+  </data>
+  <data name="rqContentDetail" xml:space="preserve">
+    <value>Detail is required</value>
+  </data>
+  <data name="rqContentImage" xml:space="preserve">
+    <value>Image is required.</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>

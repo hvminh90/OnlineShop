@@ -1,12 +1,3 @@
-D:\MVC.NET\OnlineShop\StaticResource\bin\Debug\StaticResource.dll
-D:\MVC.NET\OnlineShop\StaticResource\bin\Debug\StaticResource.pdb
-D:\MVC.NET\OnlineShop\StaticResource\bin\Debug\en\StaticResource.resources.dll
-D:\MVC.NET\OnlineShop\StaticResource\obj\Debug\StaticResource.Resources.resources
-D:\MVC.NET\OnlineShop\StaticResource\obj\Debug\StaticResource.Resources.en.resources
-D:\MVC.NET\OnlineShop\StaticResource\obj\Debug\StaticResource.csproj.GenerateResource.Cache
-D:\MVC.NET\OnlineShop\StaticResource\obj\Debug\en\StaticResource.resources.dll
-D:\MVC.NET\OnlineShop\StaticResource\obj\Debug\StaticResource.dll
-D:\MVC.NET\OnlineShop\StaticResource\obj\Debug\StaticResource.pdb
 D:\MVC .NET\SOURCE\OnlineShop\StaticResource\bin\Debug\StaticResource.dll
 D:\MVC .NET\SOURCE\OnlineShop\StaticResource\bin\Debug\StaticResource.pdb
 D:\MVC .NET\SOURCE\OnlineShop\StaticResource\bin\Debug\en\StaticResource.resources.dll
@@ -17,3 +8,13 @@ D:\MVC .NET\SOURCE\OnlineShop\StaticResource\obj\Debug\StaticResource.csproj.Gen
 D:\MVC .NET\SOURCE\OnlineShop\StaticResource\obj\Debug\en\StaticResource.resources.dll
 D:\MVC .NET\SOURCE\OnlineShop\StaticResource\obj\Debug\StaticResource.dll
 D:\MVC .NET\SOURCE\OnlineShop\StaticResource\obj\Debug\StaticResource.pdb
+D:\MVC.NET\OnlineShop\StaticResource\bin\Debug\StaticResource.dll
+D:\MVC.NET\OnlineShop\StaticResource\bin\Debug\StaticResource.pdb
+D:\MVC.NET\OnlineShop\StaticResource\bin\Debug\en\StaticResource.resources.dll
+D:\MVC.NET\OnlineShop\StaticResource\obj\Debug\StaticResource.csprojResolveAssemblyReference.cache
+D:\MVC.NET\OnlineShop\StaticResource\obj\Debug\StaticResource.Resources.resources
+D:\MVC.NET\OnlineShop\StaticResource\obj\Debug\StaticResource.Resources.en.resources
+D:\MVC.NET\OnlineShop\StaticResource\obj\Debug\StaticResource.csproj.GenerateResource.Cache
+D:\MVC.NET\OnlineShop\StaticResource\obj\Debug\en\StaticResource.resources.dll
+D:\MVC.NET\OnlineShop\StaticResource\obj\Debug\StaticResource.dll
+D:\MVC.NET\OnlineShop\StaticResource\obj\Debug\StaticResource.pdb

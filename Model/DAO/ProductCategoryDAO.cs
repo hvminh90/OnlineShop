@@ -25,5 +25,57 @@ namespace Model.DAO
         {
             return db.ProductCategories.SingleOrDefault(p => p.ID == id);
         }
+        public List<ProductCategory> GetListAll()
+        {
+            return db.ProductCategories.ToList();
+        }
+        public long Insert(ProductCategory model)
+        {
+            db.ProductCategories.Add(model);
+            db.SaveChanges();
+            return model.ID;
+        }
+        public bool Delete(long id)
+        {
+            var obj = db.ProductCategories.Where(p => p.ID == id).FirstOrDefault();
+            db.ProductCategories.Remove(obj);
+            return true;
+        }
+
+        public bool Update(ProductCategory model)
+        {
+            try
+            {
+                var obj = db.ProductCategories.Where(p => p.ID == model.ID).FirstOrDefault();
+                obj.Name = model.Name;
+                obj.MetaTitle = model.MetaTitle;
+                obj.ParentID = model.ParentID;
+                obj.DisplayOrder = model.DisplayOrder;
+                obj.SeoTitle = model.SeoTitle;
+                obj.ModifiedBy = model.ModifiedBy;
+                obj.ModifiedDate = model.ModifiedDate;
+                obj.MetaKeywords = model.MetaKeywords;
+                obj.MetaDescriptions = model.MetaDescriptions;
+                obj.Status = model.Status;
+
+                db.SaveChanges();
+                return true;
+
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
+        public List<ProductCategory> GetListCategoryInProduct()
+        {
+            var lst = (from product in db.Products 
+                       join category in db.ProductCategories on product.CategoryID equals category.ID
+                       select   category 
+                       );
+            return lst.Distinct().ToList() ;
+        }
     }
 }

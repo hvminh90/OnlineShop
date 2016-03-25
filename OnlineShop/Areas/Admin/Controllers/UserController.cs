@@ -13,6 +13,7 @@ namespace OnlineShop.Areas.Admin.Controllers
     public class UserController : BaseController
     {
         // GET: Admin/User
+        //[AuthorizeUser(Roles="MEMBER")]
         public ActionResult Index(int? page, string searchString)
         {
             if (!string.IsNullOrEmpty(searchString))

@@ -40,8 +40,10 @@ namespace Model.EF
         [StringLength(250)]
         public string MetaDescriptions { get; set; }
 
-        public bool? Status { get; set; }
+        public bool Status { get; set; }
 
         public bool? ShowOnHome { get; set; }
+        [StringLength(2)]
+        public string Language { get; set; }
     }
 }

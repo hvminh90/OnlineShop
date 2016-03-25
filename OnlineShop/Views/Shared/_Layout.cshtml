@@ -9,12 +9,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
     <title>@ViewBag.Title</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">-->
 
-    <link href="/assets/client/css/bootstrap.css" rel="stylesheet" />
+    @*<link href="/assets/client/css/bootstrap.css" rel="stylesheet" />
     <link href="/assets/client/css/bootstrap-theme.css" rel="stylesheet" />
     <link href="/assets/client/css/bootstrap-social.css" rel="stylesheet" />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="/assets/client/css/jquery-ui.css">
     <link href="/assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="/assets/client/css/font-awesome.min.css" rel="stylesheet" />
 
@@ -23,8 +23,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     <script src="/assets/client/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/assets/client/js/move-top.js"></script>
-    <script type="text/javascript" src="/assets/client/js/easing.js"></script>
-    <script type="text/javascript" src="/assets/client/js/startstop-slider.js"></script>
+    <script type="text/javascript" src="/assets/client/js/easing.js"></script>*@
+    @Styles.Render("~/css/core")
+    @Scripts.Render("~/js/core")
 
     <script type="text/javascript">
         if (window.location.hash && window.location.hash == '#_=_') {
@@ -57,7 +58,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
             <div class="header_top">
                 <div class="logo">
-                    <a href="index.html"><img src="/assets/client/images/logo.png" alt="" /></a>
+                    <a href="/"><img src="/assets/client/images/logo.png" alt="" /></a>
                 </div>
                 @{Html.RenderAction("HeaderCart", "Home");}
 
@@ -122,7 +123,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         });
     </script>
     <a href="#" id="toTop"><span id="toTopHover"> </span></a>
-    <script src="/assets/client/js/controller/common.js"></script>
+    @*<script src="/assets/client/js/controller/common.js"></script>*@
+    @Scripts.Render("~/js/common")
     @RenderSection("jsSection", false)
 </body>
 </html>

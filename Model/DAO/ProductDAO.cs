@@ -22,7 +22,8 @@ namespace Model.DAO
         }
         public List<Product> ListFeatureProduct(int top)
         {
-            return db.Products.Where(p=>p.TopHot != null && p.TopHot > DateTime.Now).OrderByDescending(x => x.CreatedBy).Take(top).ToList();
+            //return db.Products.Where(p=>p.TopHot != null && p.TopHot > DateTime.Now).OrderByDescending(x => x.CreatedBy).Take(top).ToList();
+            return db.Products.OrderByDescending(x => x.CreatedBy).Take(top).ToList();
         }
         public List<Product> ListRelatedProduct(int productId)
         {
@@ -50,6 +51,10 @@ namespace Model.DAO
             total = db.Products.Where(p => p.Name.Contains(keyword) && p.Status == true).Count();
             var mode = db.Products.Where(p => p.Name.Contains(keyword) && p.Status == true).OrderByDescending(p => p.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize).ToList();
             return mode;
+        }
+        public List<Product> ListProductByCategoryId(int top,long categoryId)
+        {
+            return db.Products.Where(p => p.CategoryID == categoryId && p.Status == true).OrderByDescending(x => x.CreatedBy).Take(top).ToList();
         }
     }
 }

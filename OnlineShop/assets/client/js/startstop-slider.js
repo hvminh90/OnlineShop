@@ -1,5 +1,5 @@
 // SET THIS VARIABLE FOR DELAY, 1000 = 1 SECOND
-var delayLength = 4000;
+var delayLength = 200;
 	
 function doMove(panelWidth, tooFar) {
 	var leftValue = $("#mover").css("left");

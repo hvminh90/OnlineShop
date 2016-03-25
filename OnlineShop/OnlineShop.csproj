@@ -200,13 +200,30 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
+    <Compile Include="assets\admin\js\plugins\ckeditor\ImageBrowser.aspx.cs">
+      <DependentUpon>ImageBrowser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assets\admin\js\plugins\ckeditor\ImageBrowser.aspx.designer.cs">
+      <DependentUpon>ImageBrowser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assets\admin\js\plugins\ckeditor\LinkBrowser.aspx.cs">
+      <DependentUpon>LinkBrowser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assets\admin\js\plugins\ckeditor\LinkBrowser.aspx.designer.cs">
+      <DependentUpon>LinkBrowser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\AuthorizeUserAttribute.cs" />
     <Compile Include="Common\CommonContants.cs" />
     <Compile Include="Common\CommonList.cs" />
+    <Compile Include="Common\AuthorizeAttribute .cs" />
     <Compile Include="Common\CustomMembershipProvider.cs" />
     <Compile Include="Common\CustomRoleProvider.cs" />
     <Compile Include="Common\Encryptor.cs" />
@@ -216,6 +233,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -699,6 +717,7 @@
     <Content Include="assets\admin\js\plugins\ckeditor\ckeditor.js" />
     <Content Include="assets\admin\js\plugins\ckeditor\config.js" />
     <Content Include="assets\admin\js\plugins\ckeditor\contents.css" />
+    <Content Include="assets\admin\js\plugins\ckeditor\ImageBrowser.aspx" />
     <Content Include="assets\admin\js\plugins\ckeditor\lang\af.js" />
     <Content Include="assets\admin\js\plugins\ckeditor\lang\ar.js" />
     <Content Include="assets\admin\js\plugins\ckeditor\lang\bg.js" />
@@ -766,6 +785,7 @@
     <Content Include="assets\admin\js\plugins\ckeditor\lang\vi.js" />
     <Content Include="assets\admin\js\plugins\ckeditor\lang\zh-cn.js" />
     <Content Include="assets\admin\js\plugins\ckeditor\lang\zh.js" />
+    <Content Include="assets\admin\js\plugins\ckeditor\LinkBrowser.aspx" />
     <Content Include="assets\admin\js\plugins\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
     <Content Include="assets\admin\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
     <Content Include="assets\admin\js\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
@@ -1736,13 +1756,20 @@
     <Content Include="assets\client\css\font-awesome.css" />
     <Content Include="assets\client\css\font-awesome.min.css" />
     <Content Include="assets\client\css\global.css" />
+    <Content Include="assets\client\css\jquery-ui.css" />
     <Content Include="assets\client\css\menu.css" />
     <Content Include="assets\client\css\slider.css" />
     <Content Include="assets\client\css\style.css" />
+    <Content Include="assets\client\images\02.jpg" />
+    <Content Include="assets\client\images\04.jpg" />
+    <Content Include="assets\client\images\05.jpg" />
+    <Content Include="assets\client\images\09.jpg" />
+    <Content Include="assets\client\images\a12.png" />
     <Content Include="assets\client\images\about_img.jpg" />
     <Content Include="assets\client\images\arrow-next.png" />
     <Content Include="assets\client\images\arrow-prev.png" />
     <Content Include="assets\client\images\arrow_up.png" />
+    <Content Include="assets\client\images\b05.png" />
     <Content Include="assets\client\images\compare.png" />
     <Content Include="assets\client\images\delivery-img1.jpg" />
     <Content Include="assets\client\images\delivery-img2.jpg" />
@@ -1755,8 +1782,10 @@
     <Content Include="assets\client\images\feature-pic2.jpg" />
     <Content Include="assets\client\images\feature-pic3.jpg" />
     <Content Include="assets\client\images\feature-pic4.jpg" />
+    <Content Include="assets\client\images\lien-he-qc.png" />
     <Content Include="assets\client\images\linkedin.png" />
     <Content Include="assets\client\images\list-img.png" />
+    <Content Include="assets\client\images\loading.gif" />
     <Content Include="assets\client\images\logo.png" />
     <Content Include="assets\client\images\new-pic1.jpg" />
     <Content Include="assets\client\images\new-pic2.jpg" />
@@ -1765,6 +1794,7 @@
     <Content Include="assets\client\images\newsimg1.jpg" />
     <Content Include="assets\client\images\newsimg2.jpg" />
     <Content Include="assets\client\images\newsimg3.jpg" />
+    <Content Include="assets\client\images\no_image.jpg" />
     <Content Include="assets\client\images\preview.jpg" />
     <Content Include="assets\client\images\price-rating.png" />
     <Content Include="assets\client\images\productslide-1.jpg" />
@@ -1774,6 +1804,7 @@
     <Content Include="assets\client\images\productslide-5.jpg" />
     <Content Include="assets\client\images\productslide-6.jpg" />
     <Content Include="assets\client\images\quality-rating.png" />
+    <Content Include="assets\client\images\quangcao.jpg" />
     <Content Include="assets\client\images\search.png" />
     <Content Include="assets\client\images\skype.png" />
     <Content Include="assets\client\images\slide-1-image.png" />
@@ -1789,6 +1820,7 @@
     <Content Include="assets\client\images\twitter.png" />
     <Content Include="assets\client\images\value-rating.png" />
     <Content Include="assets\client\images\wishlist.png" />
+    <Content Include="assets\client\images\xoa.png" />
     <Content Include="assets\client\js\bootstrap.min.js" />
     <Content Include="assets\client\js\controller\cartController.js" />
     <Content Include="assets\client\js\controller\common.js" />
@@ -1797,8 +1829,10 @@
     <Content Include="assets\client\js\easyResponsiveTabs.js" />
     <Content Include="assets\client\js\jquery-1.12.1.min.js" />
     <Content Include="assets\client\js\jquery-1.7.2.min.js" />
+    <Content Include="assets\client\js\jquery-ui.js" />
     <Content Include="assets\client\js\jquery.accordion.js" />
     <Content Include="assets\client\js\jquery.easing.js" />
+    <Content Include="assets\client\js\jssor.slider.min.js" />
     <Content Include="assets\client\js\move-top.js" />
     <Content Include="assets\client\js\script.js" />
     <Content Include="assets\client\js\slides.min.jquery.js" />
@@ -2154,7 +2188,7 @@
     <Content Include="assets\admin\js\plugins\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\admin\js\plugins\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="assets\admin\js\plugins\ckfinder\userfiles\.htaccess" />
-    <Content Include="Areas\Admin\Views\Category\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\_Create.cshtml" />
     <Content Include="Areas\Admin\Views\Content\Create.cshtml" />
     <Content Include="assets\admin\js\plugins\ckeditor\CHANGES.md" />
     <Content Include="assets\admin\js\plugins\ckeditor\LICENSE.md" />
@@ -2193,6 +2227,19 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Areas\Admin\Views\Content\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Content\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\401.cshtml" />
+    <Content Include="assets\client\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\client\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\client\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\client\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\client\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\_Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\_Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\_Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\_Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\_Delete.cshtml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -2249,11 +2296,21 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Product\Search.cshtml" />
+    <Content Include="Views\Content\Index.cshtml" />
+    <Content Include="Views\Content\Detail.cshtml" />
+    <Content Include="Views\Content\Tags.cshtml" />
+    <Content Include="Views\Home\Error403.cshtml" />
+    <Content Include="Views\Shared\Slide - Copy.cshtml" />
+    <Content Include="Views\Home\Index - Copy.cshtml" />
+    <Content Include="Views\Product\AllProduct.cshtml" />
+    <Content Include="Views\Product\ProductChild.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Data\" />
+    <Folder Include="Upload\Files\" />
+    <Folder Include="Upload\Images\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>

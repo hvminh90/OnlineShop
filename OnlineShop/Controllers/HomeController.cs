@@ -24,7 +24,7 @@ namespace OnlineShop.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            
 
             return View();
         }
@@ -37,7 +37,7 @@ namespace OnlineShop.Controllers
         }
 
         [ChildActionOnly]
-        [OutputCache(Duration=3600 * 24)]
+        //[OutputCache(Duration=3600 * 24)]
         public ActionResult MainMenu()
         {
             var dao = new MenuDAO();
@@ -55,7 +55,7 @@ namespace OnlineShop.Controllers
         }
 
         [ChildActionOnly]
-        [OutputCache(Duration = 3600 * 24)]
+        //[OutputCache(Duration = 3600 * 24)]
         public ActionResult Footer()
         {
             var dao = new FooterDAO();
@@ -93,6 +93,11 @@ namespace OnlineShop.Controllers
             return PartialView();
         }
 
+        public ActionResult Error403()
+        {
+            return View();
+        }
 
+         
     }
 }

@@ -16,5 +16,18 @@ namespace OnlineShop.Common
                 return lst;
             else return new List<Category>();
         }
+
+        public static List<ProductCategory> GetAllProductCategory()
+        {
+            var lst = new ProductCategoryDAO().GetListAll();
+            if (lst.Any())
+                return lst;
+            return new List<ProductCategory>();
+        }
+        public static bool CheckProductInCategory(long categoryId)
+        {
+            var lst = new ProductDAO().ListProductByCategoryId(4,categoryId);
+            return lst.Count() > 0;
+        }
     }
 }

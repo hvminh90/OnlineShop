@@ -47,7 +47,9 @@ namespace OnlineShop.Common
 
         public override string[] GetRolesForUser(string username)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return new string[]{"admin"};
+            
         }
 
         public override string[] GetUsersInRole(string roleName)

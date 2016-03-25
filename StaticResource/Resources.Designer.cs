@@ -70,6 +70,60 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thể loại.
+        /// </summary>
+        public static string ContentCategory {
+            get {
+                return ResourceManager.GetString("ContentCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mô tả.
+        /// </summary>
+        public static string ContentDescription {
+            get {
+                return ResourceManager.GetString("ContentDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nội dung.
+        /// </summary>
+        public static string ContentDetail {
+            get {
+                return ResourceManager.GetString("ContentDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hình ảnh.
+        /// </summary>
+        public static string ContentImage {
+            get {
+                return ResourceManager.GetString("ContentImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tiêu đề.
+        /// </summary>
+        public static string ContentName {
+            get {
+                return ResourceManager.GetString("ContentName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trạng thái.
+        /// </summary>
+        public static string ContentStatus {
+            get {
+                return ResourceManager.GetString("ContentStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tiếng Anh.
         /// </summary>
         public static string English {
@@ -102,6 +156,51 @@ namespace StaticResource {
         public static string Phone {
             get {
                 return ResourceManager.GetString("Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vui lòng nhập mô tả..
+        /// </summary>
+        public static string rqContenDescription {
+            get {
+                return ResourceManager.GetString("rqContenDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vui lòng nhập tiêu đề tin tức..
+        /// </summary>
+        public static string rqContenName {
+            get {
+                return ResourceManager.GetString("rqContenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vui lòng chọn thể loại..
+        /// </summary>
+        public static string rqContentCategory {
+            get {
+                return ResourceManager.GetString("rqContentCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vui lòng nhập nội dung..
+        /// </summary>
+        public static string rqContentDetail {
+            get {
+                return ResourceManager.GetString("rqContentDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vui lòng chọn hình ảnh..
+        /// </summary>
+        public static string rqContentImage {
+            get {
+                return ResourceManager.GetString("rqContentImage", resourceCulture);
             }
         }
         

@@ -120,6 +120,24 @@
   <data name="Address" xml:space="preserve">
     <value>Địa chỉ</value>
   </data>
+  <data name="ContentCategory" xml:space="preserve">
+    <value>Thể loại</value>
+  </data>
+  <data name="ContentDescription" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="ContentDetail" xml:space="preserve">
+    <value>Nội dung</value>
+  </data>
+  <data name="ContentImage" xml:space="preserve">
+    <value>Hình ảnh</value>
+  </data>
+  <data name="ContentName" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+  <data name="ContentStatus" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
   <data name="English" xml:space="preserve">
     <value>Tiếng Anh</value>
   </data>
@@ -131,6 +149,21 @@
   </data>
   <data name="Phone" xml:space="preserve">
     <value>Số điện thoại</value>
+  </data>
+  <data name="rqContenDescription" xml:space="preserve">
+    <value>Vui lòng nhập mô tả.</value>
+  </data>
+  <data name="rqContenName" xml:space="preserve">
+    <value>Vui lòng nhập tiêu đề tin tức.</value>
+  </data>
+  <data name="rqContentCategory" xml:space="preserve">
+    <value>Vui lòng chọn thể loại.</value>
+  </data>
+  <data name="rqContentDetail" xml:space="preserve">
+    <value>Vui lòng nhập nội dung.</value>
+  </data>
+  <data name="rqContentImage" xml:space="preserve">
+    <value>Vui lòng chọn hình ảnh.</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Trạng thái</value>

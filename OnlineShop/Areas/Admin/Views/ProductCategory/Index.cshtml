@@ -1,0 +1,150 @@
+﻿@model PagedList.IPagedList<Model.EF.ProductCategory>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Quản lý Danh mục sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+    int index = (int)ViewBag.Page;
+    var listProCategory = (List<Model.EF.ProductCategory>)ViewBag.ListProductCategory;
+}
+@section header{
+    Danh sách danh mục sản phẩm
+}
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("Index", "ProductCategory", FormMethod.Get))
+        {
+            <div class="row">
+
+                <div class="col-md-4">
+                    @Html.TextBox("SearchString", @ViewBag.SearchString as string, new { @class = "form-control" })
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" class="btn btn-success" value="Tìm kiếm" />
+                    <a class="btn btn-success btn-ThemMoi" style="margin-left:10px;" href="/Admin/ProductCategory/Create">Thêm mới</a>
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div style="margin-bottom:10px">
+
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th class="text-center" style="width:2%">STT</th>
+                                <th style="width:25%">Tên danh mục</th>
+                                @*<th>Metatitle</th>*@
+                                <th style="width:25%">Danh mục cấp cha</th>
+                                <th style="width:15%">Ngày tạo</th>
+                                <th style="width:15%">Thứ tự sắp xếp</th>
+                                <th style="width:15%">Sửa/Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.Count; i++)
+                            {
+                                var item = Model[i];
+                                <tr>
+                                    <td class="text-center" style="width:2%">@(index + i + 1)</td>
+                                    <td style="width:20%">@item.Name</td>
+                                    @*<td>@item.MetaTitle</td>*@
+                                    <td style="width:20%">@(listProCategory.Where(p => p.ID == item.ParentID).FirstOrDefault() != null ? listProCategory.Where(p => p.ID == item.ParentID).FirstOrDefault().Name : "")</td>
+                                    <td style="width:15%">@item.CreatedDate.Value.ToString("dd/MM/yyyy")</td>
+                                    <td style="width:15%">
+                                        @*<a href="#" data-id="@item.ID" class="btn-status-category">@(item.Status == false ? "Khóa" : "Kích hoạt")</a>*@
+                                        @item.DisplayOrder
+                                    </td>
+                                    <td style="width:15%">
+                                        <a href="/Admin/ProductCategory/Edit/@item.ID" class="btn btn-success btn-Sua">Sửa</a> |
+                                        <a href="/Admin/ProductCategory/Delete/@item.ID" class="btn btn-danger btn-Xoa">Xóa</a>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+
+
+                    </table>
+                    @Html.PagedListPager(Model, page => Url.Action("Index",
+                    new { page, searchString = ViewBag.SearchString }))
+
+                    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!--Modal-->
+<div class="modal fade"
+     id="myModal"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+    </div>
+</div>
+
+<!--Script-->
+@section Script{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.btn-Sua, .btn-Xoa, .btn-ThemMoi').click(function (e) {
+                /*
+                * hủy liên kết
+                *
+                * việc này quan trọng
+                * nếu không hủy liên kết, modal sẽ không được load đúng cách
+                * vì action sẽ trả về 1 trang html trống với partialview
+                *
+                * cách tương tự return false; cách này thực hiện ở cuối method
+                */
+                if ($(this).prop("class").indexOf("btn-Xoa") < 0)
+                {
+                    $('.modal-dialog').css("width", "60%");
+                }
+                else
+                {
+                    $('.modal-dialog').css("width", "40%");
+                }
+                e.preventDefault();
+
+                var $modal = $('#myModal');
+                var $modalDialog = $('.modal-dialog');
+                var href = $(this).prop('href');
+
+                // không cho phép tắt modal khi click bên ngoài modal
+                var option = { backdrop: 'static' };
+
+                // kiểm tra (logic, điều kiện...)
+
+                // load modal
+                $modalDialog.load(href, function () {
+                    $modal.modal(option, 'show');
+                });
+
+                return false;
+
+            });
+        });
+    </script>
+}
