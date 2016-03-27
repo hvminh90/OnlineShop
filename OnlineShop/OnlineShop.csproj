@@ -204,6 +204,7 @@
     <Compile Include="Areas\Admin\Controllers\ContentController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="assets\admin\js\plugins\ckeditor\ImageBrowser.aspx.cs">
@@ -226,7 +227,10 @@
     <Compile Include="Common\AuthorizeAttribute .cs" />
     <Compile Include="Common\CustomMembershipProvider.cs" />
     <Compile Include="Common\CustomRoleProvider.cs" />
+    <Compile Include="Common\DecimalExtension.cs" />
     <Compile Include="Common\Encryptor.cs" />
+    <Compile Include="Common\ImageProduct.cs" />
+    <Compile Include="Common\ProductModelEdit.cs" />
     <Compile Include="Common\SiteLanguage.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -241,6 +245,7 @@
     </Compile>
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -710,7 +715,10 @@
     <Content Include="assets\admin\jquery-ui\jquery-ui.structure.min.css" />
     <Content Include="assets\admin\jquery-ui\jquery-ui.theme.css" />
     <Content Include="assets\admin\jquery-ui\jquery-ui.theme.min.css" />
+    <Content Include="assets\admin\js\autoNumeric.js" />
     <Content Include="assets\admin\js\flot-data.js" />
+    <Content Include="assets\admin\js\moment.js" />
+    <Content Include="assets\admin\js\moment_vi.js" />
     <Content Include="assets\admin\js\morris-data.js" />
     <Content Include="assets\admin\js\plugins\ckeditor\adapters\jquery.js" />
     <Content Include="assets\admin\js\plugins\ckeditor\build-config.js" />
@@ -2240,6 +2248,9 @@
     <Content Include="Areas\Admin\Views\ProductCategory\_Create.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\_Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\_Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />

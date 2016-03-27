@@ -8,7 +8,10 @@ namespace OnlineShop
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                        "~/Scripts/jquery.validate*"));
+
 
             bundles.Add(new ScriptBundle("~/js/core").Include(
                       "~/assets/client/js/jquery-1.12.1.min.js",

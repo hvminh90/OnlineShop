@@ -70,6 +70,36 @@ namespace OnlineShop.Areas.Admin.Controllers
             return PartialView("_Create",model);
         }
 
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var model = new ProductCategoryDAO().ViewDetail(id);
+            ViewBag.ProductCategoryID = id;
+            return PartialView("_Edit", model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public ActionResult Edit(ProductCategory model)
+        {
+            try
+            {
+                if(ModelState.IsValid)
+                {
+
+                }
+
+                return PartialView("_Edit", model);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "Cập nhật danh mục sản phẩm lỗi!");
+                return PartialView("_Edit", model);
+            }
+        }
+
         [HttpGet]
         
         public ActionResult Delete(long id)
@@ -77,11 +107,23 @@ namespace OnlineShop.Areas.Admin.Controllers
             ViewBag.ProductCategoryID = id;
             return PartialView("_Delete");
         }
-        //[HttpPost]
-        //public ActionResult Delete(long id)
-        //{
-
-        //}
+        [HttpPost, ActionName("Delete")]
+        public ActionResult ConfirmDelete(long id)
+        {
+            var result = new ProductCategoryDAO().Delete(id);
+            if(result)
+            {
+                SetAlert("Xóa danh mục sản phẩm thành công !", "SUCCESS");
+                TempData["CheckMessage"] = "CHECK";
+                return RedirectToAction("Index", "ProductCategory");
+            }
+            else
+            {
+                SetAlert("Xóa danh mục sản phẩm lỗi!", "ERROR");
+                TempData["CheckMessage"] = "CHECK";
+                return RedirectToAction("Index", "ProductCategory");
+            }
+        }
 
     }
 }

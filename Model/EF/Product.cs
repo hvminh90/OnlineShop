@@ -1,4 +1,4 @@
-namespace Model.EF
+﻿namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
@@ -12,6 +12,7 @@ namespace Model.EF
         public long ID { get; set; }
 
         [StringLength(250)]
+        [Required(ErrorMessage = "Tên sản phẩm không được để trống")]
         public string Name { get; set; }
 
         [StringLength(50)]
@@ -24,11 +25,14 @@ namespace Model.EF
         public string Description { get; set; }
 
         [StringLength(250)]
+        //[Required(ErrorMessage="Chưa chọn hình ảnh chính cho sản phẩm")]
+        
         public string Image { get; set; }
 
-        [Column(TypeName = "xml")]
+        //[Column(TypeName = "xml")]
+        [StringLength(4000)]
         public string MoreImages { get; set; }
-
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:c}")]
         public decimal? Price { get; set; }
 
         public decimal? PromotionPrice { get; set; }
@@ -60,7 +64,7 @@ namespace Model.EF
         [StringLength(250)]
         public string MetaDescriptions { get; set; }
 
-        public bool? Status { get; set; }
+        public bool Status { get; set; }
 
         public DateTime? TopHot { get; set; }
 

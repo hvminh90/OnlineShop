@@ -35,12 +35,12 @@ namespace Model.DAO
             db.SaveChanges();
             return model.ID;
         }
-        public bool Delete(long id)
-        {
-            var obj = db.ProductCategories.Where(p => p.ID == id).FirstOrDefault();
-            db.ProductCategories.Remove(obj);
-            return true;
-        }
+        //public bool Delete(long id)
+        //{
+        //    var obj = db.ProductCategories.Where(p => p.ID == id).FirstOrDefault();
+        //    db.ProductCategories.Remove(obj);
+        //    return true;
+        //}
 
         public bool Update(ProductCategory model)
         {
@@ -76,6 +76,27 @@ namespace Model.DAO
                        select   category 
                        );
             return lst.Distinct().ToList() ;
+        }
+
+        public bool Delete(long id)
+        {
+            try
+            {
+                var model = db.ProductCategories.Where(p => p.ID == id).FirstOrDefault();
+                var listModel = db.ProductCategories.Where(p => p.ParentID == id).ToList();
+                if(listModel.Any())
+                {
+                    db.ProductCategories.RemoveRange(listModel);
+                }
+                db.ProductCategories.Remove(model);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                //throw;
+            }
         }
     }
 }

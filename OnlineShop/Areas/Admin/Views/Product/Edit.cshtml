@@ -1,0 +1,419 @@
+﻿@model OnlineShop.Common.ProductModelEdit
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+@section header{
+    Cập nhật sản phẩm
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Nhập thông tin sản phẩm
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        @using (Html.BeginForm("Edit", "Product", FormMethod.Post, new { id = "frmEdit", enctype = "multipart/form-data", @class = "form-horizontal" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            @Html.HiddenFor(model => model.StringImageProduct)
+                            @Html.HiddenFor(model => model.Product.ID)
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2"></label>
+                                <div class="col-sm-10" style="padding:0px">
+                                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.Name, htmlAttributes: new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-10">
+                                    @Html.TextBoxFor(model => model.Product.Name, new { @class = "form-control" })
+                                    @*@Html.ValidationMessageFor(model => model.Product.Name, "", new { @class = "text-danger" })
+                                        @Html.ValidationMessageFor(model => model.Product.Image, "", new { @class = "text-danger" })*@
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.Code, htmlAttributes: new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-10">
+                                    @Html.TextBoxFor(model => model.Product.Code, new { @class = "form-control" })
+                                    @*@Html.ValidationMessageFor(model => model.Product.Code, "", new { @class = "text-danger" })*@
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.Description, htmlAttributes: new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-10">
+                                    @Html.TextAreaFor(model => model.Product.Description, new { @class = "form-control" })
+                                    @*@Html.ValidationMessageFor(model => model.Product.Description, "", new { @class = "text-danger" })*@
+
+                                </div>
+                            </div>
+
+                            <!--Test upload file use html 5-->
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.Image, htmlAttributes: new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-10">
+
+                                    <div class="fileUpload btn btn-primary">
+                                        <span>Chọn hình ảnh</span>
+
+                                        <input name="file" id="file_tieude_select" class="upload"
+                                               onchange="fileSelected(this);" type="file" accept="image/*" />
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2">
+
+                                </div>
+                                <div class="col-sm-3 col-sm-offset-2 text-center">
+
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-12">
+                                            <img src="@(!string.IsNullOrEmpty(Model.Product.Image) ? Model.Product.Image : "/assets/client/images/quangcao.jpg")" style="width:180px;height:180px" id="file_tieude" />
+                                            @Html.HiddenFor(model => model.Product.Image)
+
+                                        </div>
+                                        <div class="col-sm-12" style="margin-top:5px;">
+                                            <input type="button" class="btn btn-danger hide" value="Xóa" id="btnXoaAnh" onclick="XoaAnh();" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">More image</label>
+                                <div class="col-sm-10">
+
+                                    <div class="fileUpload btn btn-primary" id="uploaders">
+                                        <span>Chọn hình ảnh</span>
+                                        <input type="file" id="fileToUpload" name="fileUpload" class="upload" />
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2">
+
+                                </div>
+                                <div class="col-sm-10">
+                                    <div id="selectedFiles" class="row">
+
+                                        @*<div class="col-sm-3 columns image-box">
+                                                <div class="col-sm-12">
+                                                    <img src="/assets/client/images/quangcao.jpg" style="width:100px;height:100px" />
+                                                </div>
+                                                <div class="col-sm-12" style="margin-top:5px;">
+                                                    <input type="button" class="btn btn-danger" value="Xóa" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 columns image-box">
+                                                <div class="col-sm-12">
+                                                    <img src="/assets/client/images/quangcao.jpg" style="width:100px;height:100px" />
+                                                </div>
+                                                <div class="col-sm-12" style="margin-top:5px;">
+                                                    <input type="button" class="btn btn-danger" value="Xóa" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 columns image-box">
+                                                <div class="col-sm-12">
+                                                    <img src="/assets/client/images/quangcao.jpg" style="width:100px;height:100px" />
+                                                </div>
+                                                <div class="col-sm-12" style="margin-top:5px;">
+                                                    <input type="button" class="btn btn-danger" value="Xóa" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 columns image-box">
+                                                <div class="col-sm-12">
+                                                    <img src="/assets/client/images/quangcao.jpg" style="width:100px;height:100px" />
+                                                </div>
+                                                <div class="col-sm-12" style="margin-top:5px;">
+                                                    <input type="button" class="btn btn-danger" value="Xóa" />
+                                                </div>
+                                            </div>*@
+                                    </div>
+                                </div>
+                            </div>
+
+                            if (Model.ListImageProduct.Count > 0)
+                            {
+                                <div class="form-group">
+                                    <div class="col-sm-2">
+
+                                    </div>
+                                    <div class="col-sm-10">
+
+                                        <div class="row" id="divImageUpdated">
+                                            <!--Nếu có ảnh-->
+                                            @foreach (var item in Model.ListImageProduct)
+                                            {
+                                                <div class="col-sm-3 columns image-box imageUpdated" data-fileid="@item.FileID" data-filepath="@item.ImagePath">
+                                                    <img src="@item.ImagePath" style="width:100px;height:100px" title="@item.FileID" />
+                                                    <input type="button" class="btn btn-danger btnXoaAnhDaLuu" value="Xóa" style='margin-left:5px;' />
+
+                                                </div>
+                                            }
+
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.Price, htmlAttributes: new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-10">
+                                    @Html.TextBoxFor(model => model.Product.Price, new { @class = "form-control", @type = "number" })
+                                    @Html.ValidationMessageFor(model => model.Product.Price, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.Quantity, htmlAttributes: new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-10">
+                                    @Html.TextBoxFor(model => model.Product.Quantity, new { @class = "form-control", @type = "number" })
+                                    @Html.ValidationMessageFor(model => model.Product.Quantity, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Product category</label>
+                                <div class="col-sm-10">
+                                    @Html.DropDownListFor(model => model.Product.CategoryID, new SelectList(OnlineShop.Common.CommonList.GetAllCategory(), "ID", "Name"), "--- Chọn thể loại---", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Product.CategoryID, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.Detail, htmlAttributes: new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-10">
+                                    @Html.TextAreaFor(model => model.Product.Detail, new { @id = "txtContent", style = "height:150px;" })
+                                    @Html.ValidationMessageFor(model => model.Product.Detail, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.Status, htmlAttributes: new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-10">
+                                    @Html.CheckBoxFor(model => model.Product.Status, new { @checked = "true" })
+
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Product.TopHot, htmlAttributes: new { @class = "control-label col-sm-2" })
+                                <div class="col-sm-2" style="padding-right:0">
+
+                                    @Html.TextBoxFor(model => model.Product.TopHot, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+
+
+                                </div>
+                                <div class="col-sm-1" style="padding:0px">
+                                    <img src="/assets/admin/images/calender.png" id="imgCalender" class="img-responsive" />
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Update" class="btn btn-success" />
+                                    <a class="btn btn-primary" href="/Admin/Product/Index">Về trang trước</a>
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+@section Script{
+
+
+    <script type="text/javascript">
+
+        //Calender cho TopHot=============================
+        $('#TopHot').datepicker({
+            dateFormat: 'dd/mm/yy'
+        });
+        $("#imgCalender").click(function () {
+            $('#TopHot').datepicker("show");
+        })
+        ///================================================
+
+
+        var files;
+        var storedFiles = [];
+        var upc = 0;
+        var arrFile = [];
+
+        $(document).ready(function () {
+            var editor = CKEDITOR.replace('txtContent', {
+                customConfig: '/assets/admin/js/plugins/ckeditor/config.js',
+            });
+
+            //Upload nhiều ảnh, chọn nhiều ảnh=================================================
+            $(":file").attr('title', '  ');
+
+            $("input[id^='fileToUpload']").change(function (e) {
+                handleFileSelect(e);
+            });
+
+            selDiv = $("#selectedFiles");
+            $("body").on("click", ".selFile", removeAtt);
+            ///
+            $('.btnXoaAnhDaLuu').on('click', function (e) {
+                var fileid = $(this).parent().data('fileid');
+
+                $(this).parent().remove();
+                for (var i = 0; i < arrFile.length; i++)
+                    if (arrFile[i].FileID === fileid) {
+                        arrFile.splice(i, 1);
+                        break;
+                    }
+
+                var strFileJson = JSON.stringify(arrFile);
+                $('#@Html.IdFor(i => i.StringImageProduct)').val(strFileJson);
+
+            })
+            //===================================================================================
+        });
+
+        //==============Chọn 1 Image cho sản phẩm ===============================================
+        function fileSelected(file) {
+            var photofile = file.files[0];
+            var reader = new FileReader();
+            $("#btnXoaAnh").removeClass("hide");
+            reader.onload = function (e) {
+                $('#file_tieude')
+                    .attr('src', e.target.result)
+                    .width(180)
+                    .height(180);
+            };
+            $('#@Html.IdFor(i => i.Product.Image)').val(photofile.name);
+            reader.readAsDataURL(photofile);
+        }
+
+        function XoaAnh() {
+            $("#file_tieude_select").val('');
+            $("#file_tieude").attr('src', "/assets/client/images/quangcao.jpg");
+            $("#btnXoaAnh").addClass("hide");
+            $('#@Html.IdFor(i => i.Product.Image)').val('');
+        }
+        //=======================================================================================
+
+        //===================Sự kiện chọn nhiều ảnh==============================================
+        function handleFileSelect(e) {
+            var f = e.target.files[0];
+
+            if (!f.type.match("image.*")) {
+                alert("File không hợp lệ");
+                return;
+            }
+            console.log(storedFiles.indexOf(f.name));
+            if (storedFiles.indexOf(f.name) < 0) {
+                upc = upc + 1;
+
+                $("input[id^='fileToUpload']").hide();
+
+                $('<input>').attr({
+                    type: 'file',
+
+                    id: 'fileToUpload' + upc,
+                    class: 'upload',
+                    name: 'fileUpload',
+                    style: 'float: left',
+                    title: '  ',
+                    onchange: "doReCreate(event)"
+
+                }).appendTo('#uploaders');
+
+                storedFiles.push(f.name);
+                var idfile = upc - 1;
+                var reader = new FileReader();
+                reader.onload = function (e) {
+
+                    var html1 = "<div class=\"col-sm-3 columns image-box\">";
+                    html1 += "<img src=\"" + e.target.result + "\" style=\"width:100px;height:100px\" title = '" + f.name + "'/>";
+                    html1 += "<input style='margin-left:5px;' type=\"button\" class=\"btn btn-danger selFile\" value=\"Xóa\" title='Xóa hình' data-file='" + f.name + "' data-id = '" + idfile + "'/>";
+                    html1 += "</div>";
+                    selDiv.append(html1);
+
+                }
+                reader.readAsDataURL(f);
+            }
+            else {
+                var id = 'fileToUpload' + upc;
+                $("#fileToUpload" + upc).val("");
+                alert("File này đã tồn tại");
+                //$("#fileToUpload" + upc).remove();
+                //f.value = '';
+            }
+
+        }
+
+        function doReCreate(e) {
+            handleFileSelect(e);
+        }
+
+        function removeAtt(t) {
+            var file = $(this).data("file");
+            var id = $(this).data("id");
+
+            for (var i = 0; i < storedFiles.length; i++) {
+                if (storedFiles[i] === file) {
+                    storedFiles.splice(i, 1);
+                    break;
+                }
+            }
+            $(this).parent().remove();
+            if (id > 0) {
+                $("#fileToUpload" + id).remove();
+            }
+            else {
+                $("#fileToUpload").val("");
+            }
+            @*$('#@Html.IdFor(i => i.FilesToBeUploaded)').val(storedFiles);*@
+
+        }
+        //===========================================================================
+
+        //=================== onload của window======================================
+        window.onload = function () {
+            $(".imageUpdated").each(function (index) {
+                var obj = {
+                    FileID: $(this).data('fileid'),
+                    ImagePath: $(this).data('filepath')
+                };
+                arrFile.push(obj);
+            });
+           
+            var strFileJson = JSON.stringify(arrFile);
+            $('#@Html.IdFor(i => i.StringImageProduct)').val(strFileJson);
+           
+            if ($('#@Html.IdFor(i => i.Product.Image)').val() != "") {
+                $("#btnXoaAnh").removeClass("hide");
+            }
+            else { $("#btnXoaAnh").addClass("hide"); }
+        };
+        //==============================================================================
+    </script>
+}
+
+
+
+
+
+
+
+

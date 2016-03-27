@@ -56,5 +56,53 @@ namespace Model.DAO
         {
             return db.Products.Where(p => p.CategoryID == categoryId && p.Status == true).OrderByDescending(x => x.CreatedBy).Take(top).ToList();
         }
+
+        public List<Product> GetAllProduct()
+        {
+            return db.Products.ToList();
+        }
+
+        public long Insert(Product model)
+        {
+            db.Products.Add(model);
+            db.SaveChanges();
+            return model.ID;
+        }
+
+        public bool Update (Product model)
+        {
+            try
+            {
+                var entity = db.Products.Where(p => p.ID == model.ID).FirstOrDefault();
+
+                entity.ID = model.ID;
+                entity.Name = model.Name;
+                entity.Code = model.Code;
+                entity.MetaTitle = model.MetaTitle;
+                entity.Description = model.Description;
+                entity.Image = model.Image == null ? entity.Image : model.Image;
+                entity.MoreImages = model.MoreImages;
+                entity.Price = model.Price;
+                entity.PromotionPrice = model.PromotionPrice;
+                entity.Quantity = model.Quantity;
+                entity.CategoryID = model.CategoryID;
+                entity.Detail = model.Detail;
+                entity.ModifiedBy = model.ModifiedBy;
+                entity.ModifiedDate = model.ModifiedDate;
+                entity.Status = model.Status;
+                entity.TopHot = model.TopHot;
+
+                db.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
     }
+
+    
 }
