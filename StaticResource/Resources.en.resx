@@ -174,4 +174,58 @@
   <data name="Vietnamese" xml:space="preserve">
     <value>Vietnamese</value>
   </data>
+  <data name="ProductCategory" xml:space="preserve">
+    <value>Product Category</value>
+  </data>
+  <data name="ProductCode" xml:space="preserve">
+    <value>Product Code</value>
+  </data>
+  <data name="ProductDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ProductDetail" xml:space="preserve">
+    <value>Detail Product</value>
+  </data>
+  <data name="ProductImage" xml:space="preserve">
+    <value>Image Product</value>
+  </data>
+  <data name="ProductMoreImage" xml:space="preserve">
+    <value>More Image Product</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="ProductPrice" xml:space="preserve">
+    <value>Price Product</value>
+  </data>
+  <data name="ProductQuantity" xml:space="preserve">
+    <value>Quantity Product</value>
+  </data>
+  <data name="ProductStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ProductTopHot" xml:space="preserve">
+    <value>TopHot</value>
+  </data>
+  <data name="rqProductCategory" xml:space="preserve">
+    <value>Product Category is required.</value>
+  </data>
+  <data name="rqProductCode" xml:space="preserve">
+    <value>Product Code is required.</value>
+  </data>
+  <data name="rqProductDescription" xml:space="preserve">
+    <value>Description is required.</value>
+  </data>
+  <data name="rqProductDetail" xml:space="preserve">
+    <value>Detail Product is required.</value>
+  </data>
+  <data name="rqProductName" xml:space="preserve">
+    <value>Product Name is required.</value>
+  </data>
+  <data name="rqProductPrice" xml:space="preserve">
+    <value>Price Product is required.</value>
+  </data>
+  <data name="rqProductQuantity" xml:space="preserve">
+    <value>Quantity Product is required.</value>
+  </data>
 </root>

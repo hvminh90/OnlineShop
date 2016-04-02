@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Cart";
+    var totalCount = @ViewBag.TotalCount;
+    var totalPrice = (int)@ViewBag.TotalPrice;
+}
+
+<div class="cart">
+    <p>
+        Chào mừng đến với OnlineShop! <span>Giỏ hàng:</span><div id="dd" class="wrapper-dropdown-2">
+            @totalCount sản phẩm - @totalPrice.ToString("N0")
+            <ul class="dropdown">
+                <li>you have no items in your Shopping cart</li>
+            </ul>
+        </div>
+    </p>
+</div>
+

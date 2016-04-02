@@ -160,6 +160,105 @@ namespace StaticResource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Danh mục sản phẩm.
+        /// </summary>
+        public static string ProductCategory {
+            get {
+                return ResourceManager.GetString("ProductCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mã sản phẩm.
+        /// </summary>
+        public static string ProductCode {
+            get {
+                return ResourceManager.GetString("ProductCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mô tả ngắn sản phẩm.
+        /// </summary>
+        public static string ProductDescription {
+            get {
+                return ResourceManager.GetString("ProductDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chi tiết sản phẩm.
+        /// </summary>
+        public static string ProductDetail {
+            get {
+                return ResourceManager.GetString("ProductDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hình ảnh sản phẩm.
+        /// </summary>
+        public static string ProductImage {
+            get {
+                return ResourceManager.GetString("ProductImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hình ảnh liên quan của sản phẩm.
+        /// </summary>
+        public static string ProductMoreImage {
+            get {
+                return ResourceManager.GetString("ProductMoreImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tên sản phẩm.
+        /// </summary>
+        public static string ProductName {
+            get {
+                return ResourceManager.GetString("ProductName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Giá sản phẩm.
+        /// </summary>
+        public static string ProductPrice {
+            get {
+                return ResourceManager.GetString("ProductPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Số lượng sản phẩm.
+        /// </summary>
+        public static string ProductQuantity {
+            get {
+                return ResourceManager.GetString("ProductQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hoạt động.
+        /// </summary>
+        public static string ProductStatus {
+            get {
+                return ResourceManager.GetString("ProductStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ngày nổi bật.
+        /// </summary>
+        public static string ProductTopHot {
+            get {
+                return ResourceManager.GetString("ProductTopHot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vui lòng nhập mô tả..
         /// </summary>
         public static string rqContenDescription {
@@ -201,6 +300,69 @@ namespace StaticResource {
         public static string rqContentImage {
             get {
                 return ResourceManager.GetString("rqContentImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vui lòng chọn danh mục sản phẩm..
+        /// </summary>
+        public static string rqProductCategory {
+            get {
+                return ResourceManager.GetString("rqProductCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vui lòng nhập mã sản phẩm..
+        /// </summary>
+        public static string rqProductCode {
+            get {
+                return ResourceManager.GetString("rqProductCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vui lòng nhập mô tả ngắn sản phẩm..
+        /// </summary>
+        public static string rqProductDescription {
+            get {
+                return ResourceManager.GetString("rqProductDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vui lòng nhập chi tiết sản phẩm..
+        /// </summary>
+        public static string rqProductDetail {
+            get {
+                return ResourceManager.GetString("rqProductDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vui lòng nhập tên sản phẩm..
+        /// </summary>
+        public static string rqProductName {
+            get {
+                return ResourceManager.GetString("rqProductName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vui lòng nhập giá sản phẩm..
+        /// </summary>
+        public static string rqProductPrice {
+            get {
+                return ResourceManager.GetString("rqProductPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vui lòng nhập số lượng sản phẩm..
+        /// </summary>
+        public static string rqProductQuantity {
+            get {
+                return ResourceManager.GetString("rqProductQuantity", resourceCulture);
             }
         }
         

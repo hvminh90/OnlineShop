@@ -12,7 +12,7 @@
         public long ID { get; set; }
 
         [StringLength(250)]
-        [Required(ErrorMessage = "Tên sản phẩm không được để trống")]
+        //[Required(ErrorMessage = "Tên sản phẩm không được để trống")]
         public string Name { get; set; }
 
         [StringLength(50)]
@@ -32,7 +32,7 @@
         //[Column(TypeName = "xml")]
         [StringLength(4000)]
         public string MoreImages { get; set; }
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:c}")]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:c}")]
         public decimal? Price { get; set; }
 
         public decimal? PromotionPrice { get; set; }

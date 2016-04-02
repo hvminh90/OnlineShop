@@ -18,7 +18,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             if (!string.IsNullOrEmpty(searchString))
                 ViewBag.SearchString = searchString;
             var dao = new ContentDAO();
-            int pageSize = 5;
+            int pageSize = 10;
             int pageNumber = (page ?? 1);
             var model = dao.ListAllPaging(pageNumber, pageSize, searchString);
             if (pageNumber == 1)

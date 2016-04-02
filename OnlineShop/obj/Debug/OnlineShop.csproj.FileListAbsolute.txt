@@ -69,7 +69,6 @@ D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\OnlineShop.pdb
 D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\Antlr3.Runtime.dll
 D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\BotDetect.dll
 D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\BotDetect.Web.UI.Mvc.dll
-D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\CKFinder.dll
 D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\Common.dll
 D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\EntityFramework.dll
 D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\EntityFramework.SqlServer.dll
@@ -105,7 +104,6 @@ D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\Common.pdb
 D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\Model.pdb
 D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\StaticResource.pdb
 D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\Antlr3.Runtime.pdb
-D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\CKFinder.pdb
 D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\EntityFramework.xml
 D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\EntityFramework.SqlServer.xml
 D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\Facebook.xml
@@ -207,3 +205,4 @@ D:\MVC.NET\OnlineShop\OnlineShop\bin\en\StaticResource.resources.dll
 D:\MVC.NET\OnlineShop\OnlineShop\obj\Debug\OnlineShop.csprojResolveAssemblyReference.cache
 D:\MVC.NET\OnlineShop\OnlineShop\obj\Debug\OnlineShop.dll
 D:\MVC.NET\OnlineShop\OnlineShop\obj\Debug\OnlineShop.pdb
+D:\MVC .NET\SOURCE\OnlineShop\OnlineShop\bin\DotNet.Highcharts.dll

@@ -102,6 +102,26 @@ namespace Model.DAO
                 return false;
             }
         }
+
+        public bool Delete(long id)
+        {
+            try
+            {
+                var model = db.Products.Where(p => p.ID == id).FirstOrDefault();
+                if(model != null)
+                {
+                    db.Products.Remove(model);
+                    db.SaveChanges();
+                }
+                return true;  
+
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
     }
 
     

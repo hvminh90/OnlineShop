@@ -1,0 +1,203 @@
+﻿@model Model.EF.Content
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Style{
+    <style>
+            .tags 
+            {
+                background: #DDDDDD;
+                padding: 8px 15px 3px;
+                clear: both;
+            }
+
+            .tags li 
+            {
+                font-family: Roboto-Bold,Arial,Helvetica,sans-serif;
+                font-size: 15px;
+                color: blue;
+                display: inline-block;
+                margin: 0 5px 5px 0;
+                padding: 3px 12px 3px;
+                background-color:#ffffff
+             }   
+             .tags a {
+                  text-decoration:none !important;
+                  color: #000;
+             } 
+             .tags li:hover {
+                  text-decoration:none !important;
+                  background:#3366CC;
+                   
+             }  
+             .tags li:first-child:hover {
+                 background:#DDDDDD;
+             }
+             .tags > :first-child
+             {
+                 font-family: Roboto-Bold,Arial,Helvetica,sans-serif;
+                 font-size: 15px;
+                 color: blue;
+                 display: inline-block;
+                 margin: 0 5px 5px 0;    
+                 text-transform: uppercase;
+                 background-color:#DDDDDD
+              }
+
+            .tags ul 
+            {
+                list-style-type: none;
+                list-style: none;
+            }
+             #container-care {
+              overflow: hidden;
+              width: 100%;
+              display:table-row;
+              margin:5px 0px 5px 0px;
+            }
+            #left-col-care{
+              width:30%;
+              display:table-cell;
+            }
+            #right-col-care {
+             
+              width: 70%;
+              display:table-cell;
+              vertical-align:top;
+              padding-left:5px;
+            }
+            .title-care {
+                 word-break:break-all; 
+                 width:100%; 
+                 text-align:justify;
+            }
+            p.title {
+                font-size:15px;
+                font-weight:bold;
+                text-align:justify;
+            }
+            p.note {
+                font-size:12px;
+                font-style:italic;
+            }
+            .padding-left-right-0 {
+                padding-left:0px;
+                padding-right:0px;
+            }
+            .margin-top-bottom-15px {
+                margin-top:15px;
+                margin-bottom:15px;
+            }
+    </style>
+}
+<div class="content">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="col-sm-12">
+                <h2>@Model.Name</h2>
+                <time><i class="fa fa-clock-o"></i>@Model.CreatedDate.Value.ToString("hh:mm tt") - @Model.CreatedDate.Value.ToString("dd/MM/yyyy") <span class="symbol">Online Shop</span></time>
+            </div>
+            @*<div class="col-sm-12" style="margin-top:20px;margin-bottom:20px;">
+                <img src="@Model.Image" />
+            </div>*@
+            <div class="col-sm-12" style="text-align:justify; margin-top:20px">
+
+                @Html.Raw(Model.Detail)
+            </div>
+            <div class="col-sm-12" style="margin-top:10px">
+                <ul class="tags">
+                    <li>Tags:</li>
+                    @foreach (var item in (List<Model.EF.Tag>)ViewBag.ListTag)
+                    {
+                        <li><a href="/tag/@item.ID">@item.Name</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="col-sm-12">
+                <div class="title-care">
+                    <h2>Có thể bạn quan tâm </h2>
+                </div>
+                <div id="container-care">
+                    <div id="left-col-care">
+                        <img src="/assets/client/images/02.jpg" style="width:100%;height:80px" />
+                    </div>
+                    <div id="right-col-care">
+                        <p class="title"> Sập cầu Ghềnh: Tàu Bắc-Nam dừng ở ga Biên Hòa </p>
+                        <p class="note">16:22 20/03/2016 </p>
+                    </div>
+                </div>
+
+                <div id="container-care">
+                    <div id="left-col-care">
+                        <img src="/assets/client/images/02.jpg" style="width:100%;height:80px" />
+                    </div>
+                    <div id="right-col-care">
+                        <p class="title"> Sập cầu Ghềnh: Tàu Bắc-Nam dừng ở ga Biên Hòa </p>
+                        <p class="note">16:22 20/03/2016 </p>
+                    </div>
+                </div>
+
+                <div id="container-care">
+                    <div id="left-col-care">
+                        <img src="/assets/client/images/02.jpg" style="width:100%;height:80px" />
+                    </div>
+                    <div id="right-col-care">
+                        <p class="title"> Sập cầu Ghềnh: Tàu Bắc-Nam dừng ở ga Biên Hòa </p>
+                        <p class="note">16:22 20/03/2016 </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-12" style="margin-top:80px;">
+                <div class="title-care">
+                    <h2>Tin nổi bật </h2>
+                </div>
+
+                <div class="col-sm-12 padding-left-right-0 margin-top-bottom-15px">
+                    <div class="col-sm-12 padding-left-right-0 ">
+                        <img src="/assets/client/images/02.jpg" style="width:100%;height:100%" />
+                    </div>
+                    <div class="col-sm-12 padding-left-right-0">
+                        <p class="title" style="text-align:justify"> Sập cầu Ghềnh: Tàu Bắc-Nam dừng ở ga Biên Hòa </p>
+                        <p class="note">16:22 20/03/2016 </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 padding-left-right-0 margin-top-bottom-15px">
+                    <div class="col-sm-12 padding-left-right-0">
+                        <img src="/assets/client/images/02.jpg" style="width:100%;height:100%" />
+                    </div>
+                    <div class="col-sm-12 padding-left-right-0">
+                        <p class="title" style="text-align:justify"> Sập cầu Ghềnh: Tàu Bắc-Nam dừng ở ga Biên Hòa </p>
+                        <p class="note">16:22 20/03/2016 </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 padding-left-right-0 margin-top-bottom-15px">
+                    <div class="col-sm-12 padding-left-right-0">
+                        <img src="/assets/client/images/02.jpg" style="width:100%;height:100%" />
+                    </div>
+                    <div class="col-sm-12 padding-left-right-0">
+                        <p class="title" style="text-align:justify"> Sập cầu Ghềnh: Tàu Bắc-Nam dừng ở ga Biên Hòa </p>
+                        <p class="note">16:22 20/03/2016 </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 padding-left-right-0 margin-top-bottom-15px">
+                    <div class="col-sm-12 padding-left-right-0">
+                        <img src="/assets/client/images/02.jpg" style="width:100%;height:100%" />
+                    </div>
+                    <div class="col-sm-12 padding-left-right-0">
+                        <p class="title" style="text-align:justify"> Sập cầu Ghềnh: Tàu Bắc-Nam dừng ở ga Biên Hòa </p>
+                        <p class="note">16:22 20/03/2016 </p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+

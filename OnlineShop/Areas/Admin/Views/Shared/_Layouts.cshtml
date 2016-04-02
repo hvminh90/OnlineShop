@@ -19,12 +19,32 @@
     <link href="/assets/admin/datetime/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <link href="/assets/admin/jquery-ui/jquery-ui.css" rel="stylesheet" />
     <link href="/assets/admin/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+
+    <!---JS============================================================================================-->
+    <script src="/assets/client/js/jquery-1.12.1.min.js"></script>
+    <script src="/assets/admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/admin/datetime/moment.js"></script>
+    <script src="/assets/admin/datetime/bootstrap-datetimepicker.js"></script>
+    <script src="/assets/admin/datetime/bootstrap-datetimepicker.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/assets/admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    @*<script src="/assets/admin/js/plugins/ckfinder/ckfinder.js"></script>*@
+    <script src="/assets/admin/js/plugins/ckeditor/ckeditor.js"></script>
+    <script src="/assets/admin/jquery-ui/jquery-ui.js"></script>
+    <script src="/assets/admin/jquery-ui/jquery-ui.min.js"></script>
+    @Scripts.Render("~/bundles/highchart")
+    <!-- Custom Theme JavaScript -->
+    <script src="/assets/admin/dist/js/sb-admin-2.js"></script>
+    <!--================================================================================================-->
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    @RenderSection("style",false)
 </head>
 <body>
     <div id="wrapper">
@@ -56,25 +76,15 @@
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="/assets/admin/bower_components/jquery/dist/jquery.min.js"></script>
+   
+    @*<script src="/assets/admin/bower_components/jquery/dist/jquery.min.js"></script>*@
 
+   
 
     <!-- Bootstrap Core JavaScript -->
 
-    <script src="/assets/admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/assets/admin/datetime/moment.js"></script>
-    <script src="/assets/admin/datetime/bootstrap-datetimepicker.js"></script>
-    <script src="/assets/admin/datetime/bootstrap-datetimepicker.min.js"></script>
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/assets/admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-    <script src="/assets/admin/js/plugins/ckfinder/ckfinder.js"></script>
-    <script src="/assets/admin/js/plugins/ckeditor/ckeditor.js"></script>
-    <script src="/assets/admin/jquery-ui/jquery-ui.js"></script>
-    <script src="/assets/admin/jquery-ui/jquery-ui.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="/assets/admin/dist/js/sb-admin-2.js"></script>
+    
+    
     @RenderSection("Script", false)
 </body>
 </html>

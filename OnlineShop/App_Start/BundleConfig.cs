@@ -33,6 +33,18 @@ namespace OnlineShop
                       "~/assets/client/css/style.css",
                       "~/assets/client/css/font-awesome.min.css"));
 
+            //bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
+            //    "~/Scripts/kendo/kendo.all.min.js",
+            //    "~/Scripts/kendo/kendo.aspnetmvc.min.js"));
+            //bundles.Add(new StyleBundle("~/Content/kendo/css").Include(
+            //    "~/Content/kendo/kendo.common.min.css",
+            //    "~/Content/kendo/kendo.default.min.css"));
+            bundles.Add(new ScriptBundle("~/bundles/highchart").Include(
+                     "~/Scripts/Highcharts-4.0.1/js/highcharts.js",
+                      "~/Scripts/Highcharts-4.0.1/js/modules/drilldown.js"
+                      
+                        ));
+
             BundleTable.EnableOptimizations = true;
         }
     }

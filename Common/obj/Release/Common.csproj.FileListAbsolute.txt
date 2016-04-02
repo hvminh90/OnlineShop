@@ -1,0 +1,4 @@
+D:\MVC .NET\SOURCE\OnlineShop\Common\bin\Release\Common.dll
+D:\MVC .NET\SOURCE\OnlineShop\Common\bin\Release\Common.pdb
+D:\MVC .NET\SOURCE\OnlineShop\Common\obj\Release\Common.dll
+D:\MVC .NET\SOURCE\OnlineShop\Common\obj\Release\Common.pdb

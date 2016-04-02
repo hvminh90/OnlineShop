@@ -19,7 +19,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             if (!string.IsNullOrEmpty(searchString))
                 ViewBag.SearchString = searchString;
             var dao = new UserDAO();
-            int pageSize = 5;
+            int pageSize = 10;
             int pageNumber = (page ?? 1);
             var model = dao.ListAllPaging(pageNumber, pageSize,searchString);
             if (pageNumber == 1)
@@ -108,12 +108,18 @@ namespace OnlineShop.Areas.Admin.Controllers
             var dao = new UserDAO();
            
             var result = dao.Delete(id);
-            if (result) return RedirectToAction("Index");
+            if (result)
+            {
+                SetAlert("Xóa user thành công !", "SUCCESS");
+                TempData["CheckMessage"] = "CHECK";
+                return RedirectToAction("Index", "User");
+            }
             else
             {
-                ModelState.AddModelError("", "Lỗi xóa sản phẩm");
+                SetAlert("Xóa user không thành công !", "ERROR");
+                TempData["CheckMessage"] = "CHECK";
+                return RedirectToAction("Index", "User");
             }
-            return View("Index");
 
         }
 

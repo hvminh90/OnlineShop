@@ -1,0 +1,9 @@
+D:\MVC .NET\SOURCE\OnlineShop\StaticResource\bin\Release\StaticResource.dll
+D:\MVC .NET\SOURCE\OnlineShop\StaticResource\bin\Release\StaticResource.pdb
+D:\MVC .NET\SOURCE\OnlineShop\StaticResource\bin\Release\en\StaticResource.resources.dll
+D:\MVC .NET\SOURCE\OnlineShop\StaticResource\obj\Release\StaticResource.Resources.resources
+D:\MVC .NET\SOURCE\OnlineShop\StaticResource\obj\Release\StaticResource.Resources.en.resources
+D:\MVC .NET\SOURCE\OnlineShop\StaticResource\obj\Release\StaticResource.csproj.GenerateResource.Cache
+D:\MVC .NET\SOURCE\OnlineShop\StaticResource\obj\Release\en\StaticResource.resources.dll
+D:\MVC .NET\SOURCE\OnlineShop\StaticResource\obj\Release\StaticResource.dll
+D:\MVC .NET\SOURCE\OnlineShop\StaticResource\obj\Release\StaticResource.pdb

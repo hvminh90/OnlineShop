@@ -174,4 +174,58 @@
   <data name="Vietnamese" xml:space="preserve">
     <value>Tiếng Việt</value>
   </data>
+  <data name="ProductCategory" xml:space="preserve">
+    <value>Danh mục sản phẩm</value>
+  </data>
+  <data name="ProductCode" xml:space="preserve">
+    <value>Mã sản phẩm</value>
+  </data>
+  <data name="ProductDescription" xml:space="preserve">
+    <value>Mô tả ngắn sản phẩm</value>
+  </data>
+  <data name="ProductDetail" xml:space="preserve">
+    <value>Chi tiết sản phẩm</value>
+  </data>
+  <data name="ProductImage" xml:space="preserve">
+    <value>Hình ảnh sản phẩm</value>
+  </data>
+  <data name="ProductMoreImage" xml:space="preserve">
+    <value>Hình ảnh liên quan của sản phẩm</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Tên sản phẩm</value>
+  </data>
+  <data name="ProductPrice" xml:space="preserve">
+    <value>Giá sản phẩm</value>
+  </data>
+  <data name="ProductQuantity" xml:space="preserve">
+    <value>Số lượng sản phẩm</value>
+  </data>
+  <data name="ProductStatus" xml:space="preserve">
+    <value>Hoạt động</value>
+  </data>
+  <data name="ProductTopHot" xml:space="preserve">
+    <value>Ngày nổi bật</value>
+  </data>
+  <data name="rqProductCategory" xml:space="preserve">
+    <value>Vui lòng chọn danh mục sản phẩm.</value>
+  </data>
+  <data name="rqProductCode" xml:space="preserve">
+    <value>Vui lòng nhập mã sản phẩm.</value>
+  </data>
+  <data name="rqProductDescription" xml:space="preserve">
+    <value>Vui lòng nhập mô tả ngắn sản phẩm.</value>
+  </data>
+  <data name="rqProductDetail" xml:space="preserve">
+    <value>Vui lòng nhập chi tiết sản phẩm.</value>
+  </data>
+  <data name="rqProductName" xml:space="preserve">
+    <value>Vui lòng nhập tên sản phẩm.</value>
+  </data>
+  <data name="rqProductPrice" xml:space="preserve">
+    <value>Vui lòng nhập giá sản phẩm.</value>
+  </data>
+  <data name="rqProductQuantity" xml:space="preserve">
+    <value>Vui lòng nhập số lượng sản phẩm.</value>
+  </data>
 </root>

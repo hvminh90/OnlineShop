@@ -14,8 +14,8 @@ namespace OnlineShop.Common
         {
             CultureInfo culture = new CultureInfo("vi-VN");
             culture.NumberFormat.NumberDecimalDigits = 2;
-            culture.NumberFormat.NumberGroupSeparator = ",";
-            culture.NumberFormat.NumberDecimalSeparator = ".";
+            culture.NumberFormat.NumberGroupSeparator = ".";
+            culture.NumberFormat.NumberDecimalSeparator = ",";
             string result = RemovePrecision(String.Format(culture, "{0:N}", value));
             return result;
         }

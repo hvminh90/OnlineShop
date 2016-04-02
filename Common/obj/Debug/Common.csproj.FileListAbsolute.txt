@@ -4,7 +4,6 @@ D:\MVC .NET\OnlineShop\Common\obj\Debug\Common.dll
 D:\MVC .NET\OnlineShop\Common\obj\Debug\Common.pdb
 D:\MVC .NET\SOURCE\OnlineShop\Common\bin\Debug\Common.dll
 D:\MVC .NET\SOURCE\OnlineShop\Common\bin\Debug\Common.pdb
-D:\MVC .NET\SOURCE\OnlineShop\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 D:\MVC .NET\SOURCE\OnlineShop\Common\obj\Debug\Common.dll
 D:\MVC .NET\SOURCE\OnlineShop\Common\obj\Debug\Common.pdb
 D:\MVC.NET\OnlineShop\Common\bin\Debug\Common.dll

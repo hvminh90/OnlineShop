@@ -1,0 +1,139 @@
+﻿@model List<Model.EF.Product>
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var category = (Model.EF.ProductCategory)ViewBag.Category;
+    ViewBag.Title = category.Name;
+}
+@section Style{
+    <style>
+        .sanpham .col-md-3:first-child {
+            padding-left: 0;
+        }
+
+
+        .sanpham .col-md-3:last-child {
+            padding-right: 0;
+        }
+
+        .productbox {
+            background-color: #ffffff;
+            padding: 10px;
+            margin-bottom: 10px;
+            -webkit-box-shadow: 0 8px 6px -6px #999;
+            -moz-box-shadow: 0 8px 6px -6px #999;
+            box-shadow: 0 8px 6px -6px #999;
+        }
+
+        .producttitle {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        .productprice {
+            border-top: 1px solid #dadada;
+            padding-top: 5px;
+        }
+
+        .pricetext {
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+    </style>
+}
+<div class="content">
+    <div class="content_top">
+        <div class="heading">
+            <h3>@category.Name</h3>
+        </div>
+        <div class="see">
+            <p><a href="/sanp-pham/@category.MetaTitle-@category.ID">Xem tất cả</a></p>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="row" style="padding-left:5px;padding-right:5px;">
+        @foreach (var item in Model)
+        { 
+            <div class="col-md-3 column productbox">
+                <a href="/chi-tiet/@item.MetaTitle-@item.ID"><img src="@item.Image" alt="@item.Name" class="img-responsive" /></a>
+                <div class="producttitle">@item.Name </div>
+                <div class="productprice">
+                    <div class="pull-right">
+                        <a href="/them-gio-hang-@item.ID-1" class="btn btn-danger btn-sm" role="button">BUY</a>
+                    </div>
+                    <div class="pricetext">@(item.Price.HasValue ? item.Price.Value.ToString("N0") + " vnđ" : "Liên hệ")</div>
+                </div>
+            </div>
+        }
+
+
+        @*@foreach (var item in Model)
+            {
+                <div class="col-md-3" >
+                    <div style="-webkit-box-shadow: 0px 0px 3px rgb(150, 150, 150);padding:1.5%;text-align: center">
+                        <a href="/chi-tiet/@item.MetaTitle-@item.ID"><img src="@item.Image" alt="@item.Name" /></a>
+                        <h2>@item.Name </h2>
+                        <div class="price-details">
+                            <div class="price-number">
+                                <p><span class="rupees">@(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Liên hệ")</span></p>
+                            </div>
+                            <div class="add-cart">
+                                <h4><a href="preview.html">Thêm vào giỏ</a></h4>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+            }*@
+
+
+    </div>
+    <!--Phân trang-->
+    @if (ViewBag.TotalPage >= 1)
+    {
+        var pageDisplay = (int)ViewBag.MaxPage;
+        var totalPage = (int)ViewBag.TotalPage;
+        var currentPage = (int)ViewBag.Page;
+
+        var startPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
+        var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
+        var link = "/san-pham/" + @category.MetaTitle + "-" + @category.ID;
+
+        <nav>
+            <ul class="pagination">
+                @if (currentPage > ViewBag.First)
+                {
+                    <li><a href="@link/@ViewBag.First" title="Trang đầu"><i class="fa fa-fast-backward"></i></a></li>
+                    <li><a href="@link/@ViewBag.Prev" title="Trang trước"><i class="fa fa-caret-left"></i></a></li>
+                }
+                @for (int i = startPageIndex; i <= endPageIndex; i++)
+                {
+                    if (currentPage == i)
+                    {
+                        <li><a href="@link/@i" class="active" title="Trang @i">@i</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="@link/@i" class="pos" title="Trang @i">@i</a></li>
+                    }
+                }
+                @if (currentPage < totalPage)
+                {
+                    <li><a href="@link/@ViewBag.Next" title="Trang sau"><i class="fa fa-caret-right"></i></a></li>
+                    <li><a href="@link/@ViewBag.Last" title="Trang cuối"><i class="fa fa-fast-forward"></i></a></li>
+                }
+            </ul>
+        </nav>
+
+
+    }
+    else
+    {
+        <div class="alert alert-success" style="margin-top:10px">
+            Không có sản phẩm nào
+        </div>
+         
+    }
+</div>

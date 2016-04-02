@@ -1,0 +1,130 @@
+﻿<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">-->
+
+    @*<link href="/assets/client/css/bootstrap.css" rel="stylesheet" />
+    <link href="/assets/client/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="/assets/client/css/bootstrap-social.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/client/css/jquery-ui.css">
+    <link href="/assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/assets/client/css/font-awesome.min.css" rel="stylesheet" />
+
+    <script src="/assets/client/js/jquery-1.12.1.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script src="/assets/client/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/client/js/move-top.js"></script>
+    <script type="text/javascript" src="/assets/client/js/easing.js"></script>*@
+    @Styles.Render("~/css/core")
+    @Scripts.Render("~/js/core")
+
+    <script type="text/javascript">
+        if (window.location.hash && window.location.hash == '#_=_') {
+            if (window.history && history.pushState) {
+                window.history.pushState("", document.title, window.location.pathname);
+            } else {
+                // Prevent scrolling by storing the page's current scroll offset
+                var scroll = {
+                    top: document.body.scrollTop,
+                    left: document.body.scrollLeft
+                };
+                window.location.hash = '';
+                // Restore the scroll offset, should be flicker free
+                document.body.scrollTop = scroll.top;
+                document.body.scrollLeft = scroll.left;
+            }
+        }
+
+         
+    </script>
+
+    @RenderSection("Style", false)
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="headertop_desc">
+                @{Html.RenderAction("TopMenu", "Home");}
+            </div>
+
+            <div class="header_top">
+                <div class="logo">
+                    <a href="/"><img src="/assets/client/images/logo.png" alt="" /></a>
+                </div>
+                @{Html.RenderAction("HeaderCart", "Home");}
+
+                <script type="text/javascript">
+                    function DropDown(el) {
+                        this.dd = el;
+                        this.initEvents();
+                    }
+                    DropDown.prototype = {
+                        initEvents: function () {
+                            var obj = this;
+
+                            obj.dd.on('click', function (event) {
+                                $(this).toggleClass('active');
+                                event.stopPropagation();
+                            });
+                        }
+                    }
+
+                    $(function () {
+
+                        var dd = new DropDown($('#dd'));
+
+                        $(document).click(function () {
+                            // all dropdowns
+                            $('.wrapper-dropdown-2').removeClass('active');
+                        });
+
+                    });
+
+                </script>
+                <div class="clear"></div>
+            </div>
+
+            <div class="header_bottom">
+                @{Html.RenderAction("MainMenu", "Home");}
+                <div class="search_box">
+                    <form action="/tim-kiem" method="get">
+                        <input type="text" value="" name="keyword" id="txtkeyword" placeholder="Nhập từ khóa">
+                        <input type="submit" value="">
+                    </form>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            @RenderSection("Slide", false)
+
+
+        </div>
+
+        <div class="main">
+            @RenderBody()
+        </div>
+    </div>
+    <div class="footer">
+        @{Html.RenderAction("Footer", "Home");}
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <a href="#" id="toTop"><span id="toTopHover"> </span></a>
+    @*<script src="/assets/client/js/controller/common.js"></script>*@
+    @Scripts.Render("~/js/common")
+    @RenderSection("jsSection", false)
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿@model List<Model.EF.ProductCategory>
+@{
+    ViewBag.Title = "AllProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Style{
+    <style>
+        .sanpham .col-md-3:first-child {
+            padding-left: 0;
+        }
+
+
+        .sanpham .col-md-3:last-child {
+            padding-right: 0;
+        }
+
+        .productbox {
+            background-color: #ffffff;
+            padding: 10px;
+            margin-bottom: 10px;
+            -webkit-box-shadow: 0 8px 6px -6px #999;
+            -moz-box-shadow: 0 8px 6px -6px #999;
+            box-shadow: 0 8px 6px -6px #999;
+        }
+
+        .producttitle {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        .productprice {
+            border-top: 1px solid #dadada;
+            padding-top: 5px;
+        }
+
+        .pricetext {
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+    </style>
+}
+
+<div class="content">
+
+    @foreach (var item in Model)
+    {
+        <div class="content_top">
+            <div class="heading">
+                <h3>@item.Name</h3>
+            </div>
+            <div class="see">
+                <p><a href="/san-pham/@item.MetaTitle-@item.ID">Xem tất cả</a></p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="row" style="padding-left:5px;padding-right:5px;">
+            @{Html.RenderAction("ProductChild", "Product", new { categoryId = @item.ID });}
+        </div>
+    }
+</div>
+
